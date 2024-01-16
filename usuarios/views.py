@@ -56,7 +56,8 @@ def logar(request):
       user = auth.authenticate(request, username=username, password = senha)
       if user:
         auth.login(request,user)
-        messages.add_message(request, constants.SUCCESS, 'Logado')        
+        messages.add_message(request, constants.SUCCESS, 'Logado')  
+        #return redirect('/usuarios/cadastro')      
       else:
           messages.add_message(
                 request, constants.ERROR, 'Username ou senha inválidos'
