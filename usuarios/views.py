@@ -3,8 +3,6 @@ from django.contrib.auth.models import User ,auth
 from django.contrib.messages import constants
 from django.contrib import messages
 
-
-
 # Create your views here.
 
 def cadastro(request):
@@ -57,7 +55,7 @@ def logar(request):
       if user:
         auth.login(request,user)
         messages.add_message(request, constants.SUCCESS, 'Logado')  
-        #return redirect('/usuarios/cadastro')      
+        return redirect('/flashcard/novo_flashcard/')      
       else:
           messages.add_message(
                 request, constants.ERROR, 'Username ou senha inválidos'
