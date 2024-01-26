@@ -39,6 +39,7 @@
                         <div class="col-md">
                             <label for="">Categoria</label>
                             <select class="form-select" name="categoria">
+                                <option value="">Todas as Categorias</option>
                                 {% for categoria in categorias %}
                                 <option value="{{categoria.id}}">{{categoria.nome}}</option>
                                 {% endfor %}
@@ -47,6 +48,7 @@
                         <div class="col-md">
                             <label for="">Dificuldade</label>
                             <select class="form-select" name="dificuldade">
+                                <option value="">Todas as Dificuldades</option>
                                 {% for dificuldade in dificuldades %}
                                 <option value="{{dificuldade.0}}">{{dificuldade.1}}</option>
                                 {% endfor %}
@@ -72,6 +74,7 @@
                     <div class="col-md">
                         <label for="">Categoria</label>
                         <select name="categoria" id="" class="form-select">
+                            <option value="">Todas as Categorias</option>
                             {% for categoria in categorias %}
                             <option value="{{categoria.id}}">{{categoria.nome}}</option>
                             {% endfor %}
@@ -81,6 +84,7 @@
                     <div class="col-md">
                         <label for="">Dificuldade</label>
                         <select name="dificuldade" id="" class="form-select">
+                            <option value="">Todas as Dificuldades</option>
                             {% for dificuldade in dificuldades %}
                             <option value="{{dificuldade.0}}">{{dificuldade.1}}</option>
                             {% endfor %}
@@ -99,8 +103,8 @@
 
 
             {% for flash in flashcards %}
-            <div class="box-new-flashcard" onclick="flip_card('{{ flash.id }}')">
-                <div class="flashcard {{flash.css_dificuldade}}">
+            <div class="box-new-flashcard">
+                <div class="flashcard">
 
                     <div class="flashcard-categoria">
                         {{flash.categoria}}
@@ -114,7 +118,7 @@
                     </div>
 
                 </div>
-                <div class="resposta-flashcard" id="{{flash.id}}">
+                <div class="resposta-flashcard">
                     {{flash.resposta}}
                 </div>
             </div>
